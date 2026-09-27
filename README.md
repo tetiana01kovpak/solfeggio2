@@ -24,3 +24,17 @@ Open http://localhost:8080. The health check is at `/healthz`.
 ```sh
 node --check app.js && node scripts/check-frequencies.mjs
 ```
+
+## Android app
+
+`android/` is a native Kotlin and Jetpack Compose app with the same tones and labels. Tones keep playing with the screen off, and the notification has a Stop action. Unplugging headphones stops the tone.
+
+```sh
+cd android && ./gradlew assembleRelease
+```
+
+Without signing variables the release build uses the debug key. For a signed build set `SOLFEGGIO_KEYSTORE`, `SOLFEGGIO_KEYSTORE_PASSWORD`, `SOLFEGGIO_KEY_ALIAS` and `SOLFEGGIO_KEY_PASSWORD`.
+
+## Publishing
+
+Every push to `main` runs `.github/workflows/publish.yml`. It checks the web app, builds the signed APK and publishes the page plus `solfeggio.apk` to the `gh-pages` branch, which GitHub Pages serves. The signing key comes from the `KEYSTORE_BASE64`, `KEYSTORE_PASSWORD`, `KEY_ALIAS` and `KEY_PASSWORD` repository secrets.

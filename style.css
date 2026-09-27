@@ -44,7 +44,21 @@ main {
 }
 
 h1 { margin: 0 0 0.5rem; font-weight: normal; letter-spacing: 0.02em; }
-.lede { margin: 0 0 1.5rem; }
+.lede { margin: 0 0 1rem; }
+
+.get-app {
+  display: inline-block;
+  margin: 0 0 1.5rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.get-app:hover { background: var(--accent); }
+.get-app:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .cards {
   display: grid;
