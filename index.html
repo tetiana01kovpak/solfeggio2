@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solfeggio Frequencies</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg class="waves" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 100 C150 40 300 160 450 100 S750 40 900 100 S1150 160 1200 100"/>
+    <path d="M0 130 C200 80 350 180 600 130 S1000 80 1200 130"/>
+    <path d="M0 70 C120 110 280 30 480 70 S820 110 1000 70 S1150 40 1200 70"/>
+  </svg>
+
+  <main>
+    <header>
+      <h1>Solfeggio Frequencies</h1>
+      <p class="lede">Pure sine tones at the eight Solfeggio frequencies. Click a card to play it, click again to stop.</p>
+    </header>
+
+    <section id="cards" class="cards" aria-label="Frequencies"></section>
+
+    <section class="controls">
+      <label class="control">
+        <span>Volume <output id="volume-out">20%</output></span>
+        <input id="volume" type="range" min="0" max="100" value="20">
+      </label>
+      <label class="control">
+        <span>Session timer</span>
+        <select id="timer">
+          <option value="0">Off</option>
+          <option value="5">5 min</option>
+          <option value="10">10 min</option>
+          <option value="20">20 min</option>
+        </select>
+      </label>
+      <p class="hint">Start quietly, especially on headphones.</p>
+    </section>
+
+    <section class="scope">
+      <canvas id="scope" width="800" height="160" aria-label="Live waveform"></canvas>
+      <p class="readout"><span id="readout">Silence</span> <span id="remaining"></span></p>
+    </section>
+
+    <footer>
+      <p>Keys <kbd>1</kbd>–<kbd>8</kbd> toggle a tone, <kbd>Space</kbd> stops.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
